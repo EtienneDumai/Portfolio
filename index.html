@@ -1,44 +1,38 @@
 <!DOCTYPE html>
-<html lang="fr">
 
+<html lang="fr" class="d-flex flex-column align-items-center"></html>
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Portfolio</title>
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css">
 </head>
 
 <body>
-    <header>
-        <div class="container">
-            <div id="titre">
-                <li><a onclick="location.href = 'index.html';">Portfolio</a></li>
-            </div>
-            <nav>
-                <ul>
-                    <li><a href="#about">À propos</a></li>
-                    <li><a href="#projects">Projets</a></li>
-                    <li><a href="#skills">Compétences</a></li>
-                    <li><a href="#contact">Contact</a></li>
-                </ul>
-            </nav>
+    <header class="bg-light py-3"></header>
+            <div id="titre" class="d-flex justify-content-between align-items-center">
+                <li class="list-unstyled"><a class="text-decoration-none" onclick="location.href = 'index.html';">Portfolio</a></li>
+                <nav>
+                    <ul class="nav">
+                        <li class="nav-item"><a class="nav-link" href="#about">À propos</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#projects">Projets</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#skills">Compétences</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+                    </ul>
+                </nav>
         </div>
     </header>
 
-    <section id="about">
-        <div class="container">
+    <section id="about" class="py-5">
             <h2>À propos de moi</h2>
             <p>Bonjour, je suis Dumai Etienne, un développeur passioné actuellement en BUT Informatique à l'IUT de
                 Bayonne en deuxième année. Je suis également en alternance dans l'entreprise Inviseo.</p>
     </section>
 
-    <section id="projects">
-
-        <div class="container">
-
+    <section id="projects" class="py-5">
             <h2>Mes Projets :</h2>
 
-            <div class="project">
+            <div class="project mb-4">
                 <h3>Lecteur de Diaporama</h3>
                 <h4>Langages et logiciels utilisés :</h4>
                 <div class="encadrer">
@@ -49,10 +43,9 @@
                     <P>Git</P>
                     <p>GitHub</p>
                 </div>
-                <button onclick="location.href = 'projets/projetS201.html';" type="lienProjet">Lien vers le projet</button>
-            </div>
+                <button class="btn btn-primary" onclick="location.href = 'projets/projetS201.html';" type="button">Lien vers le projet</button>
 
-            <div class="project">
+            <div class="project mb-4">
                 <h3>Algorithmes de recherche de plus courts chemins</h3>
                 <h4>Langages et logiciels utilisés :</h4>
                 <div class="encadrer">
@@ -61,19 +54,20 @@
                     <P>Git</P>
                     <p>GitHub</p>
                 </div>
-                <button onclick="location.href = 'projets/projetS202.html';" type="lienProjet">Lien vers le projet</button>
+                <button class="btn btn-primary" onclick="location.href = 'projets/projetS202.html';" type="button">Lien vers le projet</button>
             </div>
 
-            <div class="project">
+            <div class="project mb-4">
                 <h3>Installation de services réseaux</h3>
                 <h4>Langages et logiciels utilisés :</h4>
                 <div class="encadrer">
                     <p>Marionnet</p>
                     <p>Bash</p>
                 </div>
-                <button onclick="location.href = 'projets/projetS203.html';" type="lienProjet">Lien vers le projet</button>
+                <button class="btn btn-primary" onclick="location.href = 'projets/projetS203.html';" type="button">Lien vers le projet</button>
             </div>
-            <div class = "project">
+
+            <div class="project mb-4">
                 <h3>Exploitation d'une base de donnée</h3>
                 <h4>Langages et logiciels utilisés :</h4>
                 <div class="encadrer">
@@ -83,15 +77,14 @@
                     <P>Git</P>
                     <p>GitHub</p>
                 </div>
-                <button onclick="location.href = 'projets/projetS204.html';" type="lienProjet">Lien vers le projet</button>
+                <button class="btn btn-primary" onclick="location.href = 'projets/projetS204.html';" type="button">Lien vers le projet</button>
             </div>
         </div>
     </section>
 
-    <section id="skills">
-        <div class="container">
+    <section id="skills" class="py-5">
             <h2>Compétences</h2>
-            <ul>
+            <ul class="list-unstyled"></ul>
                 <li>HTML</li>
                 <li>CSS</li>
                 <li>C++</li>
@@ -100,22 +93,21 @@
                 <li>Bash</li>
                 <li>Outils de développement (Git, GitHub, Qt Creator, VSCode, Spyder, PhpMyAdmin, MySql Workbench)</li>
             </ul>
-        </div>
     </section>
 
-    <section id="contact">
-        <div class="container">
+    <section id="contact" class="py-5"></section>
             <h2>Contactez-moi</h2>
             <form action="#" method="post">
                 <label for="email">Email : etienne.dumai@gmail.com</label>
             </form>
-        </div>
     </section>
 
-    <footer>
-        <p>&copy; 2024 DUMAI Etienne. Tous droits réservés.</p>
+    <footer class="bg-light py-3">
+            <p class="text-center">&copy; 2024 DUMAI Etienne. Tous droits réservés.</p>
     </footer>
+
+
+    <script src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
 </body>
 
 </html>
-<script src="js/script.js"></script>
