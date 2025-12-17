@@ -87,7 +87,7 @@ generate_enum_angular() {
 generate_model_laravel() {
     echo -n "Entrez le nom du modèle Laravel à générer : "
     read model_name
-    cd backend && php artisan make:model "$model_name" && cd ..
+    cd server && php artisan make:model "$model_name" && cd ..
     echo "Modèle '$model_name' généré avec succès."
     echo "Appuyez sur une touche pour continuer..."
     read -n 1
@@ -95,7 +95,7 @@ generate_model_laravel() {
 generate_model_laravel_with_migration() {
     echo -n "Entrez le nom du modèle Laravel à générer avec migration : "
     read model_name
-    cd backend && php artisan make:model "$model_name" -m && cd ..
+    cd server && php artisan make:model "$model_name" -m && cd ..
     echo "Modèle '$model_name' avec migration généré avec succès."
     echo "Appuyez sur une touche pour continuer..."
     read -n 1
@@ -103,7 +103,7 @@ generate_model_laravel_with_migration() {
 generate_controller_laravel() {
     echo -n "Entrez le nom du contrôleur Laravel à générer : "
     read controller_name
-    cd backend && php artisan make:controller "$controller_name" && cd ..
+    cd server && php artisan make:controller Api/V1/"$controller_name" && cd ..
     echo "Contrôleur '$controller_name' généré avec succès."
     echo "Appuyez sur une touche pour continuer..."
     read -n 1
@@ -111,7 +111,7 @@ generate_controller_laravel() {
 generate_middleware_laravel() {
     echo -n "Entrez le nom du middleware Laravel à générer : "
     read middleware_name
-    cd backend && php artisan make:middleware "$middleware_name" && cd ..
+    cd server && php artisan make:middleware "$middleware_name" && cd ..
     echo "Middleware '$middleware_name' généré avec succès."
     echo "Appuyez sur une touche pour continuer..."
     read -n 1
@@ -159,10 +159,10 @@ while true; do
             generate_enum_angular
             ;;
         11)
-            cd backend && php artisan serve && cd ..
+            cd server && php artisan serve && cd ..
             ;;
         12)
-            cd backend && php artisan serve --env=production && cd ..
+            cd server && php artisan serve --env=production && cd ..
             ;;
         13)
             generate_model_laravel
