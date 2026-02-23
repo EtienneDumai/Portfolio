@@ -13,7 +13,6 @@ import { CarouselModule } from "primeng/carousel";
 export class ProjectComponent implements OnInit {
   private readonly projectService = inject(ProjectService);
   protected listProjet !: Project[];
-  responsiveOptions: any[] | undefined;
   ngOnInit(): void {
     this.projectService.getAllProjects().subscribe({
       next: (data) => {
@@ -23,27 +22,5 @@ export class ProjectComponent implements OnInit {
         console.error(`Une erreur est survenue lors de la recupération des projets : ${err}`);
       }
     });
-    this.responsiveOptions = [
-      {
-        breakpoint: '1400px',
-        numVisible: 2,
-        numScroll: 1
-      },
-      {
-        breakpoint: '1199px',
-        numVisible: 3,
-        numScroll: 1
-      },
-      {
-        breakpoint: '767px',
-        numVisible: 2,
-        numScroll: 1
-      },
-      {
-        breakpoint: '575px',
-        numVisible: 1,
-        numScroll: 1
-      }
-    ];
   }
 }

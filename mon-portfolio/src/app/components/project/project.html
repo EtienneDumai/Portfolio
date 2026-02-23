@@ -1,25 +1,22 @@
-@if (this.listProjet.length !== 0) {
-  <div class=" flex grid gap-6 [grid-template-columns:repeat(auto-fit,minmax(260px,1fr))] mt-5 justify-center">
-        @for (projet of this.listProjet; track projet.id) {
-
-    <div class="rounded-xl p-4">
-      <app-project-card
-        [id]="projet.id"
-        [nom]="projet.nom"
-        [description]="projet.description"
-        [date_debut]="projet.date_debut"
-        [date_fin]="projet.date_fin"
-        [status]="projet.status"
-        [type]="projet.type"
-        [stack]="projet.stack"
-        [roles]="projet.roles"
-        [imageUrl]="projet.imageUrl"
-        [lienGithub]="projet.lienGithub"
-        [lienDemo]="projet.lienDemo"
-      />
-
+<div class="mx-auto px-4 sm:px-6 lg:px-8 py-8">
+  @if (this.listProjet.length !== 0) {
+    <div  class="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-3">
+      @for (projet of this.listProjet; track projet.id) {
+        <app-project-card
+          [id]="projet.id"
+          [nom]="projet.nom"
+          [description]="projet.description"
+          [date_debut]="projet.date_debut"
+          [date_fin]="projet.date_fin"
+          [status]="projet.status"
+          [type]="projet.type"
+          [stack]="projet.stack"
+          [roles]="projet.roles"
+          [imageUrl]="projet.imageUrl"
+          [lienGithub]="projet.lienGithub"
+          [lienDemo]="projet.lienDemo"
+        />
+      }
     </div>
-    }
-    
-  </div>
-}
+  }
+</div>

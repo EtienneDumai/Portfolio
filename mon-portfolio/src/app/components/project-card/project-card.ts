@@ -1,5 +1,5 @@
 import { DatePipe } from '@angular/common';
-import { Component, CUSTOM_ELEMENTS_SCHEMA, Input, OnInit } from '@angular/core';
+import { Component, CUSTOM_ELEMENTS_SCHEMA, HostBinding, Input, OnInit } from '@angular/core';
 import { ButtonModule } from 'primeng/button';
 import { CardModule } from 'primeng/card';
 import { Technology } from '../../data/data';
@@ -13,6 +13,8 @@ import { Technology } from '../../data/data';
   schemas:[CUSTOM_ELEMENTS_SCHEMA]
 })
 export class ProjectCard implements OnInit{
+
+  @HostBinding('class') class = 'contents';
   @Input() id !:number;
   @Input() nom !: string;
   @Input() description!:string;

@@ -1,109 +1,102 @@
-<div class="mb-5 flex justify-content-center">
-  <p-card class="w-full md:w-25rem shadow-2">
-
+<div
+  class="h-full flex flex-col rounded-2xl border overflow-hidden shadow-sm hover:shadow-md transition-shadow p-2"
+>
+  <div>
     <!-- Image -->
     @if (imageUrl) {
       <ng-template #header>
-        <img
-          [src]="imageUrl"
-          [alt]="nom"
-          class="w-full object-cover border-round-top"
-        />
+        <img [src]="imageUrl" [alt]="nom" class="w-full object-cover border-round-top" />
       </ng-template>
     }
+  </div>
 
-    <!-- Titre -->
-    <ng-template #title>
+  <div class="flex flex-col flex-grow">
+    <h3 class="font-bold text-gray-900 text-lg leading-tight line-clamp-1" [title]="nom">
       {{ nom }}
-    </ng-template>
+    </h3>
+  </div>
 
+  <div class="flex justify-start">
     <!-- Dates -->
     <ng-template #subtitle>
-      {{ date_debut | date:'yyyy' }}
+      {{ date_debut | date: 'yyyy' }}
       -
       @if (date_fin) {
-        {{ date_fin | date:'yyyy' }}
+        {{ date_fin | date: 'yyyy' }}
       } @else {
         Aujourd’hui
       }
     </ng-template>
+  </div>
 
+  <div class="flex break-all justifiy-start align-items">
     <!-- Description -->
     <p class="line-height-3 mb-3">
       {{ description }}
     </p>
-
-    <!-- Stack -->
-    @if (stack?.length) {
-      <div class="flex flex-wrap gap-2 mb-3 justify-center">
-        @for (tech of stack; track tech) {
-          <p-tag class="border rounded-full px-2">
-            @if (tech.icon) {
-              <img [src]="tech.icon">
-            }
-            @else {
-
-            }
-            <p>{{tech.nom}}</p>
-            
-          </p-tag>
-        }
-      </div>
-    }
-
-    <!-- Rôles -->
-    @if (roles?.length) {
-      <p class="text-600 text-sm mb-3">
-        Rôle :
-        <span class="font-medium">
-          {{ this.roles?.join(', ') }}
-        </span>
-      </p>
-    }
-
-    <!-- Footer -->
-    <ng-template #footer>
-  <div class="flex gap-3">
-
-    @if (lienGithub) {
-      <a href="{{lienGithub}}"
-      target="_blank">
-        <button
-        class="w-16 h-32 bg-white border rounded"
-        target="_blank"
-        rel="noopener noreferrer"
-        icon="pi pi-github"
-        label="GitHub"
-        severity="secondary"
-      ><i class="fa-brands fa-github"></i>
-      Lien du GitHub
-        </button>
-      </a>
-    }
-    @else {
-      <p>Lien du GitHub non disponible</p>
-    }
-
-    @if (lienDemo) {
-      <a href="{{lienDemo}}"
-      target="_blank">
-        <button
-        class="w-16 h-32 "
-        target="_blank"
-        rel="noopener noreferrer"
-        label="GitHub"
-        severity="secondary"
-      ><i class="fa-brands fa-github"></i>
-      Démo
-        </button>
-      </a>
-    }
-    @else {
-      <p>Lien de démonstration non disponible</p>
-    }
-
   </div>
-</ng-template>
 
-  </p-card>
+  <!-- Stack -->
+  @if (stack?.length) {
+    <div class="flex flex-wrap gap-2 mb-3 justify-center">
+      @for (tech of stack; track tech) {
+        <p-tag class="border rounded-full px-2">
+          @if (tech.icon) {
+            <img [src]="tech.icon" />
+          } @else {}
+          <p>{{ tech.nom }}</p>
+        </p-tag>
+      }
+    </div>
+  }
+
+  <!-- Rôles -->
+  @if (roles?.length) {
+    <p class="text-600 text-sm mb-3">
+      Rôle :
+      <span class="font-medium">
+        {{ this.roles?.join(', ') }}
+      </span>
+    </p>
+  }
+
+  <!-- Footer -->
+  <ng-template #footer>
+    <div class="flex gap-3 align-items">
+      @if (lienGithub) {
+        <a href="{{ lienGithub }}" target="_blank">
+          <button
+            class="w-16 h-32 bg-white border rounded"
+            target="_blank"
+            rel="noopener noreferrer"
+            icon="pi pi-github"
+            label="GitHub"
+            severity="secondary"
+          >
+            <i class="fa-brands fa-github"></i>
+            Lien du GitHub
+          </button>
+        </a>
+      } @else {
+        <p>Lien du GitHub non disponible</p>
+      }
+
+      @if (lienDemo) {
+        <a href="{{ lienDemo }}" target="_blank">
+          <button
+            class="w-16 h-32"
+            target="_blank"
+            rel="noopener noreferrer"
+            label="GitHub"
+            severity="secondary"
+          >
+            <i class="fa-brands fa-github"></i>
+            Démo
+          </button>
+        </a>
+      } @else {
+        <p>Lien de démonstration non disponible</p>
+      }
+    </div>
+  </ng-template>
 </div>
