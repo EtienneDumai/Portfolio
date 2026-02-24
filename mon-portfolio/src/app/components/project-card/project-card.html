@@ -1,34 +1,37 @@
 <div
   class="h-full flex flex-col rounded-2xl border overflow-hidden shadow-sm hover:shadow-md transition-shadow p-2"
 >
-  
-
-  <div class="flex flex-col ">
+  <div id="nomProjet" class="flex flex-col">
     <h3 class="font-bold text-gray-900 text-lg leading-tight line-clamp-1" [title]="nom">
       {{ nom }}
     </h3>
   </div>
 
-  <div class="flex justify-start text-sm text-gray-600">
+  <div id="dateProjet" class="flex justify-start text-sm text-gray-600">
     <!-- Dates -->
-      {{ date_debut | date: 'yyyy' }}
-      -
-      @if (date_fin) {
-        {{ date_fin | date: 'yyyy' }}
-      } @else {
-        Aujourd’hui
-      }
+    {{ date_debut | date: 'yyyy' }}
+    -
+    @if (date_fin) {
+      {{ date_fin | date: 'yyyy' }}
+    } @else {
+      Aujourd’hui
+    }
   </div>
-  <div class="h-48 w-full bg-gray-200 relative">
-        @if(imageUrl) {
-            <img [src]="getImageUrl(imageUrl)" [alt]="nom" class="w-full h-full object-cover" loading="lazy">
-        } @else {
-            <div class="w-full h-full flex items-center justify-center bg-gray-100 opacity-50">
-                <i class="fa-solid fa-image text-gray-400" aria-hidden="true" style="font-size: 48px;"></i>
-            </div>
-        }
-    </div>
-  <div class="flex break-all justifiy-start align-items">
+  <div id="imageProjet" class="h-48 w-full bg-gray-200 relative">
+    @if (imageUrl) {
+      <img
+        [src]="getImageUrl(imageUrl)"
+        [alt]="nom"
+        class="w-full h-full object-cover"
+        loading="lazy"
+      />
+    } @else {
+      <div class="w-full h-full flex items-center justify-center bg-gray-100 opacity-50">
+        <i class="fa-solid fa-image text-gray-400" aria-hidden="true" style="font-size: 48px"></i>
+      </div>
+    }
+  </div>
+  <div id="descProjet" class="flex break-all justifiy-start align-items">
     <!-- Description -->
     <p class="line-height-3 mb-3">
       {{ description }}
@@ -37,7 +40,7 @@
 
   <!-- Stack -->
   @if (stack?.length) {
-    <div class="flex flex-wrap gap-2 mb-3 justify-center">
+    <div id="stackProjet" class="flex flex-wrap gap-2 mb-3 justify-center">
       @for (tech of stack; track tech) {
         <p-tag class="border rounded-full px-2">
           @if (tech.icon) {
@@ -60,13 +63,12 @@
   }
 
   <!-- Footer -->
-    <div class="flex gap-3 align-items grid grid-cols-2 justify-items-center">
-      <div class="flex flex-col">
-          @if (lienGithub) {
-        
+  <div id="liensProjet" class="flex gap-3 align-items grid grid-cols-2 justify-items-center">
+    <div class="flex flex-col">
+      @if (lienGithub) {
         <a href="{{ lienGithub }}" target="_blank">
           <button
-            class=" bg-white border rounded"
+            class="bg-white border rounded"
             target="_blank"
             rel="noopener noreferrer"
             icon="pi pi-github"
@@ -80,10 +82,10 @@
       } @else {
         <p>Lien du GitHub non disponible</p>
       }
-        </div>
-      
-        <div class="flex flex-col">
-          @if (lienDemo) {
+    </div>
+
+    <div class="flex flex-col">
+      @if (lienDemo) {
         <a href="{{ lienDemo }}" target="_blank">
           <button
             class="bg-green-400 border rounded"
@@ -99,7 +101,6 @@
       } @else {
         <p>Lien de démonstration non disponible</p>
       }
-        </div>
-      
     </div>
+  </div>
 </div>
