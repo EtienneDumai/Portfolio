@@ -1,24 +1,16 @@
 <div
   class="h-full flex flex-col rounded-2xl border overflow-hidden shadow-sm hover:shadow-md transition-shadow p-2"
 >
-  <div>
-    <!-- Image -->
-    @if (imageUrl) {
-      <ng-template #header>
-        <img [src]="imageUrl" [alt]="nom" class="w-full object-cover border-round-top" />
-      </ng-template>
-    }
-  </div>
+  
 
-  <div class="flex flex-col flex-grow">
+  <div class="flex flex-col ">
     <h3 class="font-bold text-gray-900 text-lg leading-tight line-clamp-1" [title]="nom">
       {{ nom }}
     </h3>
   </div>
 
-  <div class="flex justify-start">
+  <div class="flex justify-start text-sm text-gray-600">
     <!-- Dates -->
-    <ng-template #subtitle>
       {{ date_debut | date: 'yyyy' }}
       -
       @if (date_fin) {
@@ -26,9 +18,16 @@
       } @else {
         Aujourd’hui
       }
-    </ng-template>
   </div>
-
+  <div class="h-48 w-full bg-gray-200 relative">
+        @if(imageUrl) {
+            <img [src]="getImageUrl(imageUrl)" [alt]="nom" class="w-full h-full object-cover" loading="lazy">
+        } @else {
+            <div class="w-full h-full flex items-center justify-center bg-gray-100 opacity-50">
+                <i class="fa-solid fa-image text-gray-400" aria-hidden="true" style="font-size: 48px;"></i>
+            </div>
+        }
+    </div>
   <div class="flex break-all justifiy-start align-items">
     <!-- Description -->
     <p class="line-height-3 mb-3">
@@ -61,12 +60,13 @@
   }
 
   <!-- Footer -->
-  <ng-template #footer>
-    <div class="flex gap-3 align-items">
-      @if (lienGithub) {
+    <div class="flex gap-3 align-items grid grid-cols-2 justify-items-center">
+      <div class="flex flex-col">
+          @if (lienGithub) {
+        
         <a href="{{ lienGithub }}" target="_blank">
           <button
-            class="w-16 h-32 bg-white border rounded"
+            class=" bg-white border rounded"
             target="_blank"
             rel="noopener noreferrer"
             icon="pi pi-github"
@@ -80,14 +80,16 @@
       } @else {
         <p>Lien du GitHub non disponible</p>
       }
-
-      @if (lienDemo) {
+        </div>
+      
+        <div class="flex flex-col">
+          @if (lienDemo) {
         <a href="{{ lienDemo }}" target="_blank">
           <button
-            class="w-16 h-32"
+            class="bg-green-400 border rounded"
             target="_blank"
             rel="noopener noreferrer"
-            label="GitHub"
+            label="Demo"
             severity="secondary"
           >
             <i class="fa-brands fa-github"></i>
@@ -97,6 +99,7 @@
       } @else {
         <p>Lien de démonstration non disponible</p>
       }
+        </div>
+      
     </div>
-  </ng-template>
 </div>

@@ -30,4 +30,9 @@ export class ProjectCard implements OnInit{
   ngOnInit(): void {
 
   }
+  getImageUrl(image_url: string): string {
+    if (!image_url) return '';
+    if (image_url.startsWith('http')) return image_url;
+    return 'http://localhost:8000' + image_url;
+  }
 }
