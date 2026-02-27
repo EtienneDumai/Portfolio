@@ -60,7 +60,7 @@ export const Projects: Project[] = [
         date_debut: new Date("2025-09-01"),
         status: "En cours",
         type: "Scolaire",
-        stack: [{icon:"",nom:"Angular"}, {icon:"",nom:"Typescript"}, {nom:"Laravel",icon:""}, {nom:"PHP",icon:""}, {nom:"PostgreSQL", icon:""}, {nom:"Docker", icon:""}, {nom:"Jasmine", icon:""}, {nom:"PHPUnit", icon:""}],
+        stack: [{icon:"fa-brands fa-angular",nom:"Angular"}, {icon:"fa-brands fa-typescript",nom:"Typescript"}, {nom:"Laravel",icon:"fa-brands fa-laravel"}, {nom:"PHP",icon:"fa-brands fa-php"}, {nom:"PostgreSQL", icon:"fa-brands fa-postgresql"}, {nom:"Docker", icon:"fa-brands fa-docker"}, {nom:"Jasmine", icon:"fa-brands fa-js"}, {nom:"PHPUnit", icon:"fa-brands fa-php"}, {nom:"TailwindCSS", icon:"fa-brands fa-tailwind-css"}],
         roles: ["Analyste", "Concepteur", "Développeur", "Scrum master"],
         imageUrl: "",
         lienGithub: "https://github.com/EtienneDumai/SAE-5.01-APE-Jules-Ferry"
@@ -73,7 +73,7 @@ export const Projects: Project[] = [
         date_fin: new Date("2025-04-05"),
         status: "Terminé",
         type: "Scolaire",
-        stack: [{nom:"Angular"}, {nom:"Angular Material"}, {nom:"JSON Server"}],
+        stack: [{nom:"Angular", icon:"fa-brands fa-angular"}, {nom:"Angular Material",icon:"fa-brands fa-angular"}, {nom:"JSON Server", icon:"fa-solid fa-server"}],
         roles: ["Développeur"],
         lienGithub: "https://github.com/EtienneDumai/ProjetR4.D.12"
     },
@@ -85,7 +85,7 @@ export const Projects: Project[] = [
         date_fin: new Date("2024-05-29"),
         status: "Terminé",
         type: "Scolaire",
-        stack: [{nom:"Python"}],
+        stack: [{nom:"Python", icon:"fa-brands fa-python"}],
         roles: ["Développeur"],
         lienGithub: "https://github.com/EtienneDumai/S2.02",
     },
@@ -97,7 +97,7 @@ export const Projects: Project[] = [
         date_fin: new Date("2025-12-05"),
         status: "Terminé",
         type: "Personnel",
-        stack: [{nom:"Laravel"}, {nom:"PHP"}, {nom:"TailwindCSS"}],
+        stack: [{nom:"Laravel", icon:"fa-brands fa-laravel"}, {nom:"PHP",icon:"fa-brands fa-php"}, {nom:"TailwindCSS", icon:"fa-brands fa-tailwind-css"}],
         roles: ["Développeur", "DevOps"],
         lienGithub: "https://github.com/NDI-2025/NDI-2025",
         lienDemo: "https://impslicks.alwaysdata.net"
