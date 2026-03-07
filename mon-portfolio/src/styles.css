@@ -4,18 +4,18 @@
 /* tes styles perso en dessous */
 :root {
     /* Fond de page plus aéré */
-    --bg-primary: #F1F5F9; 
+    --bg-primary: #2b2626; 
     /* Cartes en blanc pur pour le contraste */
-    --bg-surface: #FFFFFF;
+    --bg-surface: #A294F9;
     /* Texte principal plus doux que le noir pur */
-    --text-primary: #0F172A;
+    --text-primary: #5b21b6;
     /* Texte secondaire (sous-titres, dates) */
-    --text-secondary: #64748B;
+    --text-secondary: #CDC1FF;
     /* Indigo vibrant pour les éléments d'action */
-    --accent: #4F46E5;
-    --hover-accent: #3730A3;
+    --accent: #5b21b6;
+    --hover-accent: #4c1d95;
     /* Bordure subtile */
-    --border-color: #E2E8F0;
+    --border-color: #ddd6fe;
 }
 body {
     background-color: var(--bg-primary);

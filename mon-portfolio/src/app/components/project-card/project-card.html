@@ -1,7 +1,6 @@
 <div
   class="h-full flex flex-col rounded-2xl border-[var(--border-color)] overflow-hidden shadow-sm hover:shadow-md transition-shadow p-4 bg-[var(--bg-surface)]"
 >
-
   <!-- Titre -->
   <div id="nomProjet" class="min-h-[28px]">
     <h3
@@ -13,14 +12,11 @@
   </div>
 
   <!-- Date -->
-  <div
-    id="dateProjet"
-    class="min-h-[20px] text-sm text-[var(--text-secondary)]"
-  >
-    {{ date_debut | date: 'yyyy' }}
+  <div id="dateProjet" class="min-h-[20px] text-sm text-[var(--text-secondary)]">
+    {{ date_debut | date: 'dd/MM/yyyy' }}
     -
     @if (date_fin) {
-      {{ date_fin | date: 'yyyy' }}
+      {{ date_fin | date: 'dd/MM/yyyy' }}
     } @else {
       Aujourd’hui
     }
@@ -51,15 +47,12 @@
 
   <!-- Stack -->
   @if (stack?.length) {
-    <div
-      id="stackProjet"
-      class="mt-3 min-h-[40px] flex flex-wrap gap-2 justify-center"
-    >
+    <div id="stackProjet" class="mt-3 min-h-[40px] flex flex-wrap gap-2 justify-center hover">
       @for (tech of stack; track tech) {
         <span
           class="inline-flex items-center justify-center text-xs border px-3 py-1 rounded-full bg-gray-50 text-[var(--text-primary)]"
         >
-        <i class="{{tech.icon}} text-lg"></i>
+          <i class="{{ tech.icon }} text-lg"></i>
           {{ tech.nom }}
         </span>
       }
@@ -68,31 +61,25 @@
     <div class="mt-3 min-h-[40px]"></div>
   }
 
-  <!-- Rôles -->
-  @if (roles?.length) {
-    <div class="mt-3 min-h-[20px] text-sm text-gray-600">
-      Rôle :
-      <span class="font-medium text-gray-800">
-        {{ roles?.join(', ') }}
-      </span>
-    </div>
-  } @else {
-    <div class="mt-3 min-h-[20px]"></div>
-  }
-
   <!-- Footer (toujours en bas) -->
-  <div
-    id="liensProjet"
-    class="mt-auto pt-4 grid grid-cols-2 gap-3"
-  >
-    <div class="flex items-center justify-center">
+  <div id="liensProjet" class="mt-auto pt-4 gap-3">
+    <!-- Rôles -->
+    <div class ="my-2">
+      @if (roles?.length) {
+        <div class="mt-3 min-h-[20px] text-sm text-gray-600">
+          Rôle :
+          <span class="font-medium text-gray-800">
+            {{ roles?.join(', ') }}
+          </span>
+        </div>
+      } @else {
+        <div class="mt-3 min-h-[20px]"></div>
+      }
+    </div>
+    <div class = "flex grid grid-cols-2">
+      <div class="flex items-center justify-center">
       @if (lienGithub) {
-        <a
-          [href]="lienGithub"
-          target="_blank"
-          rel="noopener noreferrer"
-          class="w-full"
-        >
+        <a [href]="lienGithub" target="_blank" rel="noopener noreferrer" class="w-full">
           <button
             class="w-full border rounded-lg py-2 text-sm hover:bg-gray-50 transition cursor-pointer hover:shadow-md"
           >
@@ -101,9 +88,7 @@
           </button>
         </a>
       } @else {
-        <p class="text-xs text-gray-400 text-center">
-          GitHub non disponible
-        </p>
+        <p class="text-xs text-gray-400 text-center">GitHub non disponible</p>
       }
     </div>
 
@@ -123,11 +108,10 @@
         </a>
       } @else {
         <div class="flex items-center"></div>
-        <p class="text-xs text-gray-400 text-center">
-          Démo non disponible
-        </p>
+        <p class="text-xs text-gray-400 text-center">Démo non disponible</p>
       }
     </div>
+    </div>
+    
   </div>
-
 </div>
