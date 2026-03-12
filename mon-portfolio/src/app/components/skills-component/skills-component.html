@@ -1,0 +1,14 @@
+@for (group of groupedSkills | keyvalue; track group.key) {
+  <h2 class="text-xl font-semibold mb-4">
+    {{ group.key }}
+  </h2>
+
+  <div class="grid grid-cols-3 gap-4">
+    @for (skill of group.value; track skill.id) {
+      <div class="flex items-center gap-3">
+        <i [class]="skill.icon"></i>
+        <span>{{ skill.nom }}</span>
+      </div>
+    }
+  </div>
+}

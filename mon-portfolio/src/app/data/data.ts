@@ -106,126 +106,119 @@ export const Projects: Project[] = [
 export const SkillsPerso: Skills[] = [
     {
         id: 1,
-        icon: "test",
+        icon: "devicon-angular-plain",
         nom: "Angular",
         niveau: 4,
         category: "Frontend"
     },
     {
         id: 2,
-        icon: "test",
+        icon: "devicon-tailwindcss-original colored",
         nom: "TailwindCSS",
         niveau: 3,
         category: "Frontend"
     },
     {
         id: 3,
-        icon: "test",
+        icon: "devicon-html5-plain colored",
         nom: "HTML 5",
         niveau: 4,
         category: "Frontend"
     },
     {
         id: 4,
-        icon: "test",
+        icon: "devicon-css3-plain colored",
         nom: "CSS",
         niveau: 3,
         category: "Frontend"
     },
     {
         id: 5,
-        icon: "test",
+        icon: "devicon-laravel-original colored",
         nom: "Laravel",
         niveau: 4,
         category: "Backend"
     },
     {
         id: 6,
-        icon: "test",
+        icon: "devicon-cplusplus-plain colored",
         nom: "C++",
         niveau: 4,
         category: "Systèmes / Bas niveau"
     },
     {
         id: 7,
-        icon: "test",
+        icon: "devicon-c-original colored",
         nom: "C",
         niveau: 3,
-        category: "Système / Bas niveau"
+        category: "Systèmes / Bas niveau"
     },
     {
         id: 7,
-        icon: "test",
+        icon: "devicon-archlinux-plain colored",
         nom: "Arch Linux",
         niveau: 3,
-        category: "Système / Bas niveau"
+        category: "Systèmes / Bas niveau"
     },
     {
         id: 8,
-        icon: "test",
+        icon: "devicon-python-plain colored",
         nom: "Python",
         niveau: 4,
         category: "Données"
     },
     {
         id: 9,
-        icon: "test",
+        icon: "devicon-mysql-original colored",
         nom: "MySQL",
         niveau: 4,
         category: "Données"
     },
     {
         id: 10,
-        icon: "test",
+        icon: "devicon-postgresql-plain colored",
         nom: "PostgreSQL",
         niveau: 4,
         category: "Données"
     },
     {
         id: 11,
-        icon: "test",
+        icon: "devicon-mongodb-plain colored",
         nom: "MongoDB",
         niveau: 3,
         category: "Données"
     },
     {
         id: 12,
-        icon: "test",
+        icon: "devicon-git-plain colored",
         nom: "Git",
         niveau: 4,
         category: "DevOps / Outils"
     },
     {
         id: 13,
-        icon: "test",
+        icon: "devicon-docker-plain colored",
         nom: "Docker",
         niveau: 3,
         category: "DevOps / Outils"
     },
     {
-        id: 14,
-        icon: "test",
-        nom: "Docker Compose",
-        niveau: 3,
-        category: "DevOps / Outils"
-    },
-    {
         id: 15,
-        icon: "test",
+        icon: "devicon-githubactions-plain colored",
         nom: "GitHub Actions",
         niveau: 3,
         category: "DevOps / Outils"
     },
     {
         id: 16,
-        icon: "test",
+        icon: "devicon-githubactions-plain colored",
         nom: "CI/CD",
         niveau: 3,
         category: "DevOps / Outils"
     },
     {
         id: 17,
-        icon: "test",
+        icon: "devicon-bash-plain colored",
         nom: "Scripting",
         niveau: 4,
         category: "DevOps / Outils"

@@ -4,13 +4,13 @@
 /* tes styles perso en dessous */
 :root {
     /* Fond de page plus aéré */
-    --bg-primary: #2b2626; 
+    --bg-primary: #fbfbfb; 
     /* Cartes en blanc pur pour le contraste */
-    --bg-surface: #A294F9;
+    --bg-surface: #dbdbdb;
     /* Texte principal plus doux que le noir pur */
-    --text-primary: #5b21b6;
+    --text-primary: #000000;
     /* Texte secondaire (sous-titres, dates) */
-    --text-secondary: #CDC1FF;
+    --text-secondary: #979797;
     /* Indigo vibrant pour les éléments d'action */
     --accent: #5b21b6;
     --hover-accent: #4c1d95;
