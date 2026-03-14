@@ -60,7 +60,7 @@ export const Projects: Project[] = [
         date_debut: new Date("2025-09-01"),
         status: "En cours",
         type: "Scolaire",
-        stack: [{icon:"fa-brands fa-angular",nom:"Angular"}, {icon:"fa-brands fa-typescript",nom:"Typescript"}, {nom:"Laravel",icon:"devicon-laravel-original colored"}, {nom:"PHP",icon:"fa-brands fa-php"}, {nom:"PostgreSQL", icon:"fa-brands fa-postgresql"}, {nom:"Docker", icon:"fa-brands fa-docker"}, {nom:"Jasmine", icon:"fa-brands fa-js"}, {nom:"PHPUnit", icon:"fa-brands fa-php"}, {nom:"TailwindCSS", icon:"fa-brands fa-tailwind-css"}],
+        stack: [{icon:"fa-brands fa-angular",nom:"Angular"}, {icon:"fa-brands fa-typescript",nom:"Typescript"}, {nom:"Laravel",icon:"devicon-laravel-original colored"}, {nom:"PHP",icon:"devicon-php-plain colored"}, {nom:"PostgreSQL", icon:"fa-brands fa-postgresql"}, {nom:"Docker", icon:"fa-brands fa-docker"}, {nom:"Jasmine", icon:"fa-brands fa-js"}, {nom:"PHPUnit", icon:"devicon-php-original colored"}, {nom:"TailwindCSS", icon:"fa-brands fa-tailwind-css"}],
         roles: ["Analyste", "Concepteur", "Développeur", "Scrum master"],
         imageUrl: "",
         lienGithub: "https://github.com/EtienneDumai/SAE-5.01-APE-Jules-Ferry"
@@ -97,7 +97,7 @@ export const Projects: Project[] = [
         date_fin: new Date("2025-12-05"),
         status: "Terminé",
         type: "Personnel",
-        stack: [{nom:"Laravel", icon:"devicon-laravel-original colored"}, {nom:"PHP",icon:"fa-brands fa-php"}, {nom:"TailwindCSS", icon:"fa-brands fa-tailwind-css"}],
+        stack: [{nom:"Laravel", icon:"devicon-laravel-original colored"}, {nom:"PHP",icon:"devicon-php-plain colored"}, {nom:"TailwindCSS", icon:"fa-brands fa-tailwind-css"}],
         roles: ["Développeur", "DevOps"],
         lienGithub: "https://github.com/NDI-2025/NDI-2025",
         lienDemo: "https://impslicks.alwaysdata.net"
@@ -223,6 +223,14 @@ export const SkillsPerso: Skills[] = [
         niveau: 4,
         category: "DevOps / Outils"
     },
+    {
+        id: 18,
+        icon: "devicon-php-plain colored",
+        nom: "PHP",
+        niveau: 4,
+        category: "Backend"
+    },
+
 ]
 export const Formations: Formation[] = [
     {
