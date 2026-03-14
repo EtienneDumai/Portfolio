@@ -1,22 +1,30 @@
-<div class="mx-auto px-4 sm:px-6 lg:px-8 py-8">
-  @if (this.listProjet.length !== 0) {
-    <div  class="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-3">
-      @for (projet of this.listProjet; track projet.id) {
-        <app-project-card
-          [id]="projet.id"
-          [nom]="projet.nom"
-          [description]="projet.description"
-          [date_debut]="projet.date_debut"
-          [date_fin]="projet.date_fin"
-          [status]="projet.status"
-          [type]="projet.type"
-          [stack]="projet.stack"
-          [roles]="projet.roles"
-          [imageUrl]="projet.imageUrl"
-          [lienGithub]="projet.lienGithub"
-          [lienDemo]="projet.lienDemo"
-        />
+<div class="w-full px-6 py-8">
+  <div class="mx-auto max-w-7xl">
+    <div class="mb-8">
+      <h1 class="text-3xl font-bold text-[var(--text-primary)]">Mes projets</h1>
+      <p class="text-sm text-[var(--text-secondary)] mt-2">
+        Projets que j'ai eu la chance de réaliser.
+      </p>
+    </div>
+      @if (this.listProjet.length !== 0) {
+        <div class="grid gap-6 sm:grid-cols-1 lg:grid-cols-2 xl:grid-cols-3">
+          @for (projet of this.listProjet; track projet.id) {
+            <app-project-card
+              [id]="projet.id"
+              [nom]="projet.nom"
+              [description]="projet.description"
+              [date_debut]="projet.date_debut"
+              [date_fin]="projet.date_fin"
+              [status]="projet.status"
+              [type]="projet.type"
+              [stack]="projet.stack"
+              [roles]="projet.roles"
+              [imageUrl]="projet.imageUrl"
+              [lienGithub]="projet.lienGithub"
+              [lienDemo]="projet.lienDemo"
+            />
+          }
+        </div>
       }
     </div>
-  }
-</div>
+  </div>
