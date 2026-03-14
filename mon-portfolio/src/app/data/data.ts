@@ -60,7 +60,7 @@ export const Projects: Project[] = [
         date_debut: new Date("2025-09-01"),
         status: "En cours",
         type: "Scolaire",
-        stack: [{icon:"fa-brands fa-angular",nom:"Angular"}, {icon:"fa-brands fa-typescript",nom:"Typescript"}, {nom:"Laravel",icon:"devicon-laravel-original colored"}, {nom:"PHP",icon:"devicon-php-plain colored"}, {nom:"PostgreSQL", icon:"fa-brands fa-postgresql"}, {nom:"Docker", icon:"fa-brands fa-docker"}, {nom:"Jasmine", icon:"fa-brands fa-js"}, {nom:"PHPUnit", icon:"devicon-php-original colored"}, {nom:"TailwindCSS", icon:"fa-brands fa-tailwind-css"}],
+        stack: [{icon:"devicon-angular-plain",nom:"Angular"}, {icon:"fa-brands fa-typescript",nom:"Typescript"}, {nom:"Laravel",icon:"devicon-laravel-original colored"}, {nom:"PHP",icon:"devicon-php-plain colored"}, {nom:"PostgreSQL", icon:"devicon-postgresql-plain colored"}, {nom:"Docker", icon:"devicon-docker-plain colored"}, {nom:"Jasmine", icon:"devicon-jasmine-original"}, {nom:"PHPUnit", icon:"devicon-php-plain colored"}, {nom:"TailwindCSS", icon:"devicon-tailwindcss-original colored"}, {nom:"UML", icon:"devicon-unifiedmodelinglanguage-plain"}],
         roles: ["Analyste", "Concepteur", "Développeur", "Scrum master"],
         imageUrl: "",
         lienGithub: "https://github.com/EtienneDumai/SAE-5.01-APE-Jules-Ferry"
@@ -73,7 +73,7 @@ export const Projects: Project[] = [
         date_fin: new Date("2025-04-05"),
         status: "Terminé",
         type: "Scolaire",
-        stack: [{nom:"Angular", icon:"fa-brands fa-angular"}, {nom:"Angular Material",icon:"fa-brands fa-angular"}, {nom:"JSON Server", icon:"fa-solid fa-server"}],
+        stack: [{nom:"Angular", icon:"devicon-angular-plain"}, {nom:"Angular Material",icon:"devicon-angularmaterial-plain colored"}, {nom:"JSON Server", icon:"devicon-json-plain colored"}],
         roles: ["Développeur"],
         lienGithub: "https://github.com/EtienneDumai/ProjetR4.D.12"
     },
@@ -85,7 +85,7 @@ export const Projects: Project[] = [
         date_fin: new Date("2024-05-29"),
         status: "Terminé",
         type: "Scolaire",
-        stack: [{nom:"Python", icon:"fa-brands fa-python"}],
+        stack: [{nom:"Python", icon:"devicon-python-plain colored"}],
         roles: ["Développeur"],
         lienGithub: "https://github.com/EtienneDumai/S2.02",
     },
@@ -97,7 +97,7 @@ export const Projects: Project[] = [
         date_fin: new Date("2025-12-05"),
         status: "Terminé",
         type: "Personnel",
-        stack: [{nom:"Laravel", icon:"devicon-laravel-original colored"}, {nom:"PHP",icon:"devicon-php-plain colored"}, {nom:"TailwindCSS", icon:"fa-brands fa-tailwind-css"}],
+        stack: [{nom:"Laravel", icon:"devicon-laravel-original colored"}, {nom:"PHP",icon:"devicon-php-plain colored"}, {nom:"TailwindCSS", icon:"devicon-tailwindcss-original colored"}],
         roles: ["Développeur", "DevOps"],
         lienGithub: "https://github.com/NDI-2025/NDI-2025",
         lienDemo: "https://impslicks.alwaysdata.net"
@@ -219,7 +219,7 @@ export const SkillsPerso: Skills[] = [
     {
         id: 17,
         icon: "devicon-bash-plain colored",
-        nom: "Scripting",
+        nom: "Scripting (Bash)",
         niveau: 4,
         category: "DevOps / Outils"
     },
@@ -229,6 +229,20 @@ export const SkillsPerso: Skills[] = [
         nom: "PHP",
         niveau: 4,
         category: "Backend"
+    },
+    {
+        id: 19,
+        icon: "devicon-typescript-plain colored",
+        nom: "TypeScript",
+        niveau: 4,
+        category: "Backend"
+    },
+    {
+        id: 20,
+        icon: "devicon-nginx-original colored",
+        nom: "Nginx",
+        niveau: 4,
+        category: "DevOps / Outils"
     },
 
 ]
