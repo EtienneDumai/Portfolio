@@ -1,6 +1,7 @@
+<div class="flex max-w-64">
 @for (group of groupedSkills | keyvalue; track group.key) {
   <h2 class="text-xl font-semibold mb-4">
-    {{ group.key }}
+    {{group.key }}
   </h2>
 
   <div class="grid grid-cols-3 gap-4">
@@ -12,3 +13,4 @@
     }
   </div>
 }
+</div>
