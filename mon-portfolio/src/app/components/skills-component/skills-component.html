@@ -1,16 +1,63 @@
-<div class="flex max-w-64">
-@for (group of groupedSkills | keyvalue; track group.key) {
-  <h2 class="text-xl font-semibold mb-4">
-    {{group.key }}
-  </h2>
+<div class="w-full px-6 py-8">
+  <div class="mx-auto max-w-7xl">
+    <div class="mb-8">
+      <h1 class="text-3xl font-bold text-[var(--text-primary)]">Compétences</h1>
+      <p class="text-sm text-[var(--text-secondary)] mt-2">
+        Technologies, outils et environnements que j’utilise régulièrement.
+      </p>
+    </div>
 
-  <div class="grid grid-cols-3 gap-4">
-    @for (skill of group.value; track skill.id) {
-      <div class="flex items-center gap-3">
-        <i [class]="skill.icon"></i>
-        <span>{{ skill.nom }}</span>
-      </div>
-    }
+    <div class="grid gap-6 sm:grid-cols-1 lg:grid-cols-2 xl:grid-cols-3">
+      @for (group of groupedSkills | keyvalue; track group.key) {
+        <section
+          class="rounded-2xl border border-[var(--border-color)] bg-[var(--bg-surface)] p-5 shadow-sm hover:shadow-md transition"
+        >
+          <div class="mb-5 flex items-center justify-between">
+            <h2 class="text-lg font-semibold text-[var(--text-primary)]">
+              {{ group.key }}
+            </h2>
+
+            <span
+              class="rounded-full border border-[var(--border-color)] bg-[var(--bg-primary)] px-3 py-1 text-xs font-medium text-[var(--accent)]"
+            >
+              {{ group.value.length }} skill{{ group.value.length > 1 ? 's' : '' }}
+            </span>
+          </div>
+
+          <div class="space-y-3">
+            @for (skill of group.value; track skill.nom) {
+              <div
+                class="flex items-center justify-between gap-4 rounded-xl border border-[var(--border-color)] bg-[var(--bg-primary)] px-4 py-3 hover:bg-[var(--bg-surface)] transition"
+              >
+                <div class="flex items-center gap-3 min-w-0">
+                  <div
+                    class="flex h-10 w-10 items-center justify-center rounded-lg bg-[var(--border-color)] text-[var(--accent)] text-lg"
+                  >
+                    <i [class]="skill.icon"></i>
+                  </div>
+
+                  <div>
+                    <p class="text-sm font-medium text-[var(--text-primary)]">
+                      {{ skill.nom }}
+                    </p>
+                    <p class="text-xs text-[var(--text-secondary)]">Niveau {{ skill.niveau }}/5</p>
+                  </div>
+                </div>
+
+                <div class="flex gap-1">
+                  @for (dot of [1, 2, 3, 4,5]; track dot) {
+                    <span
+                      class="h-2.5 w-2.5 rounded-full"
+                      [class.bg-[var(--accent)]]="dot <= skill.niveau"
+                      [class.bg-[var(--text-secondary)]]="dot > skill.niveau"
+                    ></span>
+                  }
+                </div>
+              </div>
+            }
+          </div>
+        </section>
+      }
+    </div>
   </div>
-}
 </div>

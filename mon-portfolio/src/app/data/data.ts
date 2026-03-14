@@ -60,7 +60,7 @@ export const Projects: Project[] = [
         date_debut: new Date("2025-09-01"),
         status: "En cours",
         type: "Scolaire",
-        stack: [{icon:"fa-brands fa-angular",nom:"Angular"}, {icon:"fa-brands fa-typescript",nom:"Typescript"}, {nom:"Laravel",icon:"fa-brands fa-laravel"}, {nom:"PHP",icon:"fa-brands fa-php"}, {nom:"PostgreSQL", icon:"fa-brands fa-postgresql"}, {nom:"Docker", icon:"fa-brands fa-docker"}, {nom:"Jasmine", icon:"fa-brands fa-js"}, {nom:"PHPUnit", icon:"fa-brands fa-php"}, {nom:"TailwindCSS", icon:"fa-brands fa-tailwind-css"}],
+        stack: [{icon:"fa-brands fa-angular",nom:"Angular"}, {icon:"fa-brands fa-typescript",nom:"Typescript"}, {nom:"Laravel",icon:"devicon-laravel-original colored"}, {nom:"PHP",icon:"fa-brands fa-php"}, {nom:"PostgreSQL", icon:"fa-brands fa-postgresql"}, {nom:"Docker", icon:"fa-brands fa-docker"}, {nom:"Jasmine", icon:"fa-brands fa-js"}, {nom:"PHPUnit", icon:"fa-brands fa-php"}, {nom:"TailwindCSS", icon:"fa-brands fa-tailwind-css"}],
         roles: ["Analyste", "Concepteur", "Développeur", "Scrum master"],
         imageUrl: "",
         lienGithub: "https://github.com/EtienneDumai/SAE-5.01-APE-Jules-Ferry"
@@ -97,7 +97,7 @@ export const Projects: Project[] = [
         date_fin: new Date("2025-12-05"),
         status: "Terminé",
         type: "Personnel",
-        stack: [{nom:"Laravel", icon:"fa-brands fa-laravel"}, {nom:"PHP",icon:"fa-brands fa-php"}, {nom:"TailwindCSS", icon:"fa-brands fa-tailwind-css"}],
+        stack: [{nom:"Laravel", icon:"devicon-laravel-original colored"}, {nom:"PHP",icon:"fa-brands fa-php"}, {nom:"TailwindCSS", icon:"fa-brands fa-tailwind-css"}],
         roles: ["Développeur", "DevOps"],
         lienGithub: "https://github.com/NDI-2025/NDI-2025",
         lienDemo: "https://impslicks.alwaysdata.net"
@@ -154,49 +154,49 @@ export const SkillsPerso: Skills[] = [
         category: "Systèmes / Bas niveau"
     },
     {
-        id: 7,
+        id: 8,
         icon: "devicon-archlinux-plain colored",
         nom: "Arch Linux",
-        niveau: 3,
+        niveau: 2,
         category: "Systèmes / Bas niveau"
     },
     {
-        id: 8,
+        id: 9,
         icon: "devicon-python-plain colored",
         nom: "Python",
-        niveau: 4,
-        category: "Données"
-    },
-    {
-        id: 9,
-        icon: "devicon-mysql-original colored",
-        nom: "MySQL",
-        niveau: 4,
+        niveau: 3,
         category: "Données"
     },
     {
         id: 10,
-        icon: "devicon-postgresql-plain colored",
-        nom: "PostgreSQL",
-        niveau: 4,
+        icon: "devicon-mysql-original colored",
+        nom: "MySQL",
+        niveau: 3,
         category: "Données"
     },
     {
         id: 11,
+        icon: "devicon-postgresql-plain colored",
+        nom: "PostgreSQL",
+        niveau: 3,
+        category: "Données"
+    },
+    {
+        id: 12,
         icon: "devicon-mongodb-plain colored",
         nom: "MongoDB",
         niveau: 3,
         category: "Données"
     },
     {
-        id: 12,
+        id: 13,
         icon: "devicon-git-plain colored",
         nom: "Git",
         niveau: 4,
         category: "DevOps / Outils"
     },
     {
-        id: 13,
+        id: 14,
         icon: "devicon-docker-plain colored",
         nom: "Docker",
         niveau: 3,

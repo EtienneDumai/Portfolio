@@ -1,22 +1,43 @@
 @import "tailwindcss";
 
 @source "../src";
-/* tes styles perso en dessous */
+
 :root {
-    /* Fond de page plus aéré */
-    --bg-primary: #fbfbfb; 
-    /* Cartes en blanc pur pour le contraste */
+    --bg-primary: #fbfbfb;
     --bg-surface: #dbdbdb;
-    /* Texte principal plus doux que le noir pur */
+
     --text-primary: #000000;
-    /* Texte secondaire (sous-titres, dates) */
     --text-secondary: #979797;
-    /* Indigo vibrant pour les éléments d'action */
+
     --accent: #5b21b6;
     --hover-accent: #4c1d95;
-    /* Bordure subtile */
-    --border-color: #ddd6fe;
+
+    --border-color: #c9bdfe;
+
+    /* Variables complémentaires utiles */
+    --surface-soft: #f3f0ff;
+    --surface-muted: #efefef;
+    --surface-contrast: #ffffff;
+
+    --icon-bg: #ece8ff;
+
+    --badge-bg: #f5f3ff;
+    --badge-border: #c4b5fd;
+
+    --skill-dot-active: #5b21b6;
+    --skill-dot-inactive: #cfcfcf;
+
+    --button-secondary-bg: #ffffff;
+    --button-secondary-hover: #f3f0ff;
+
+    --success: #16a34a;
+    --success-hover: #15803d;
+
+    --image-placeholder-bg: #e5e5e5;
+    --image-placeholder-icon: #8a8a8a;
 }
+
 body {
     background-color: var(--bg-primary);
+    color: var(--text-primary);
 }
