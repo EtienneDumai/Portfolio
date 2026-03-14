@@ -42,7 +42,6 @@ jobs:
 
       - name: Configurer GitHub Pages
         uses: actions/configure-pages@v5
-        working-directory: .
 
       - name: Uploader l’artefact Pages
         uses: actions/upload-pages-artifact@v3
