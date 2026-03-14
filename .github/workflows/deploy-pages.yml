@@ -38,7 +38,7 @@ jobs:
         run: npm ci
 
       - name: Build Angular
-        run: npx ng build --configuration production --base-href /portfolio/
+        run: npx ng build --configuration production --base-href /Portfolio/
 
       - name: Configurer GitHub Pages
         uses: actions/configure-pages@v5
