@@ -50,6 +50,7 @@ export interface Formation {
     etablissement: string;
     lieu: string;
     pays: string;
+    mention?: string;
 }
 
 export const Projects: Project[] = [

@@ -1,1 +1,20 @@
-<p>education works!</p>
+<div class="w-full px-6 py-8">
+  <div class="mx-auto max-w-7xl">
+    <div class="mb-8">
+      <h1 class="text-3xl font-bold text-[var(--text-primary)]">Mes formations</h1>
+      <p class="text-sm text-[var(--text-secondary)] mt-2">
+        Formations que j'ai pu faire.
+      </p>
+    </div>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+  @for (formation of listFormations; track formation.idFormation) {
+    <app-education-card
+    [nom]="formation.nom"
+    [date_debut]="formation.date_debut"
+    [date_fin]="formation.date_fin"
+    [etablissement]="formation.etablissement"
+    [lieu]="formation.lieu"
+    [pays]="formation.pays"
+    [mention]="formation.mention"></app-education-card>
+  }
+</div>

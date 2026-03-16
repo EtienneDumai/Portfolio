@@ -1,0 +1,46 @@
+<div
+  class="h-full flex flex-col rounded-2xl border border-[var(--border-color)] shadow-sm hover:shadow-md transition-shadow p-5 bg-[var(--bg-surface)]"
+>
+  <!-- Header -->
+  <div class="flex items-start justify-between gap-4">
+    <div class="flex items-start gap-3">
+      <div
+        class="w-12 h-12 rounded-xl bg-[var(--bg-primary)] border border-[var(--border-color)] flex items-center justify-center shrink-0"
+      >
+        <i class="fa-solid fa-graduation-cap text-[var(--text-primary)] text-lg"></i>
+      </div>
+
+      <div>
+        <h3 class="font-bold text-[var(--text-primary)] text-xl leading-tight" [title]="nom">
+          {{ nom }}
+        </h3>
+
+        <p class="text-sm text-[var(--text-secondary)] mt-1">
+          {{ date_debut | date: 'MM/yyyy' }}
+          -
+          {{ date_fin | date: 'MM/yyyy' }}
+        </p>
+      </div>
+    </div>
+
+    @if (mention) {
+      <span
+        class="shrink-0 inline-flex items-center rounded-full border border-[var(--border-color)] bg-[var(--bg-primary)] px-3 py-1 text-xs text-[var(--text-primary)]"
+      >
+        {{ mention }}
+      </span>
+    }
+  </div>
+
+  <!-- Separator -->
+  <div class="my-4 h-px bg-[var(--border-color)]"></div>
+
+  <!-- Infos -->
+  <div class="flex flex-col gap-2">
+    <p class="text-base font-medium text-[var(--text-primary)]">
+      {{ etablissement }}
+    </p>
+
+    <p class="text-sm text-[var(--text-secondary)]">{{ lieu }}, {{ pays }}</p>
+  </div>
+</div>
