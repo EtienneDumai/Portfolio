@@ -27,12 +27,6 @@ export class ProjectCard implements OnInit{
   @Input() imageUrl?: string;
   @Input()  lienGithub?: string;
   @Input()  lienDemo?: string;
-  ngOnInit(): void {
-
-  }
-  getImageUrl(image_url: string): string {
-    if (!image_url) return '';
-    if (image_url.startsWith('http')) return image_url;
-    return 'http://localhost:8000' + image_url;
-  }
+  protected imageLoadError = false;
+  ngOnInit(): void {}
 }
