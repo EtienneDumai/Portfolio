@@ -13,8 +13,8 @@ export interface Project {
     lienDemo?: string;
 }
 export interface Technology {
-    nom:string;
-    icon?:string;
+    nom: string;
+    icon?: string;
 }
 export interface Skills {
     id: number;
@@ -42,6 +42,20 @@ export interface Entreprise {
     role: string;
 }
 
+export interface Experience {
+    idExperience: number;
+    entreprise: string;
+    poste: string;
+    type: "Stage" | "CDI" | "CDD" | "Alternance" | "Freelance";
+    date_debut: Date;
+    date_fin?: Date;
+    lieu: string;
+    pays: string;
+    description: string;
+    technologies?: Technology[];
+    lienEntreprise?: string;
+}
+
 export interface Formation {
     idFormation: number;
     date_debut: Date;
@@ -56,14 +70,14 @@ export const Projects: Project[] = [
     {
         id: 1,
         nom: "APE Jules Ferry",
-        description: "Lors d'un projet sur la 3ème année de BUT Informatique, l'APE Jules Ferry de l'école primaire portant le même nom nous a demandé de créer une application permettant la communication et la répartition des parents d'élèves sur l'organisation des différents événements organisés par l'APE.",
+        description: "Application de gestion des bénévoles sur les évennements de l'APE.",
         date_debut: new Date("2025-09-01"),
-        date_fin: new Date("2026-04/02"),
+        date_fin: new Date("2026-04-02"),
         status: "Terminé",
         type: "Scolaire",
-        stack: [{icon:"devicon-angular-plain",nom:"Angular"}, {icon:"fa-brands fa-typescript",nom:"Typescript"}, {nom:"Laravel",icon:"devicon-laravel-original colored"}, {nom:"PHP",icon:"devicon-php-plain colored"}, {nom:"PostgreSQL", icon:"devicon-postgresql-plain colored"}, {nom:"Docker", icon:"devicon-docker-plain colored"}, {nom:"Jasmine", icon:"devicon-jasmine-original"}, {nom:"PHPUnit", icon:"devicon-php-plain colored"}, {nom:"TailwindCSS", icon:"devicon-tailwindcss-original colored"}, {nom:"UML", icon:"devicon-unifiedmodelinglanguage-plain"}],
+        stack: [{ icon: "devicon-angular-plain", nom: "Angular" }, { icon: "fa-brands fa-typescript", nom: "Typescript" }, { nom: "Laravel", icon: "devicon-laravel-original colored" }, { nom: "PHP", icon: "devicon-php-plain colored" }, { nom: "PostgreSQL", icon: "devicon-postgresql-plain colored" }, { nom: "Docker", icon: "devicon-docker-plain colored" }, { nom: "Jasmine", icon: "devicon-jasmine-original" }, { nom: "PHPUnit", icon: "devicon-php-plain colored" }, { nom: "TailwindCSS", icon: "devicon-tailwindcss-original colored" }, { nom: "UML", icon: "devicon-unifiedmodelinglanguage-plain" }],
         roles: ["Analyste", "Concepteur", "Développeur", "Scrum master"],
-        imageUrl: "",
+        imageUrl: "apejulesferry.png",
         lienGithub: "https://github.com/ApeJulesFerryAnglet/SAE-5.01-APE-Jules-Ferry",
         lienDemo: "https://apejulesferry-anglet.fr",
     },
@@ -75,34 +89,50 @@ export const Projects: Project[] = [
         date_fin: new Date("2025-04-05"),
         status: "Terminé",
         type: "Scolaire",
-        stack: [{nom:"Angular", icon:"devicon-angular-plain"}, {nom:"Angular Material",icon:"devicon-angularmaterial-plain colored"}, {nom:"JSON Server", icon:"devicon-json-plain colored"}],
+        stack: [{ nom: "Angular", icon: "devicon-angular-plain" }, { nom: "Angular Material", icon: "devicon-angularmaterial-plain colored" }, { nom: "JSON Server", icon: "devicon-json-plain colored" }],
         roles: ["Développeur"],
-        lienGithub: "https://github.com/EtienneDumai/ProjetR4.D.12"
+        lienGithub: "https://github.com/EtienneDumai/ProjetR4.D.12",
+        imageUrl:"projetR4D12.png"
     },
     {
         id: 3,
         nom: "Représentation d'algorithme de plus court chemin",
-        description: "Lors de la première année pour un projet de fin de semestre il nous été demandé de coder des algorithmes de plus court chemin en prenant comme données les rues de la ville de Bayonne et de faire une représentation graphique pour les visualiser.",
+        description: "Algorithme de plus courts chem",
         date_debut: new Date("2024-04-08"),
         date_fin: new Date("2024-05-29"),
         status: "Terminé",
         type: "Scolaire",
-        stack: [{nom:"Python", icon:"devicon-python-plain colored"}],
+        stack: [{ nom: "Python", icon: "devicon-python-plain colored" }],
         roles: ["Développeur"],
         lienGithub: "https://github.com/EtienneDumai/S2.02",
+        imageUrl:"representationAlgo.png"
     },
     {
         id: 3,
         nom: "Nuit De l'Info 2025",
-        description: "La Nuit De l'Info est un événement national visant à developper une application web en une nuit sur un thème donné. Cette année le thème était Numérique Inclusif Responsable et Durable. Le but était de démontrer qu'il était possible de se passer des GAFAM avec des solutions libre de droits tout en réalisant certains défis technique ou non.",
+        description: "La Nuit De l'Info est un événement national visant à developper une application web en une nuit sur un thème donné. Cette année le thème était Numérique Inclusif Responsable et Durable.",
         date_debut: new Date("2025-12-04"),
         date_fin: new Date("2025-12-05"),
         status: "Terminé",
         type: "Personnel",
-        stack: [{nom:"Laravel", icon:"devicon-laravel-original colored"}, {nom:"PHP",icon:"devicon-php-plain colored"}, {nom:"TailwindCSS", icon:"devicon-tailwindcss-original colored"}],
+        stack: [{ nom: "Laravel", icon: "devicon-laravel-original colored" }, { nom: "PHP", icon: "devicon-php-plain colored" }, { nom: "TailwindCSS", icon: "devicon-tailwindcss-original colored" }],
         roles: ["Développeur", "DevOps"],
+        imageUrl: "resistTech.png",
         lienGithub: "https://github.com/NDI-2025/NDI-2025",
         lienDemo: "https://impslicks.alwaysdata.net"
+    },
+    {
+        id: 4,
+        nom: "Portfolio Web",
+        description: "Portfolio Web avec des données statiques, bientôt totalement dynamiques",
+        date_debut: new Date("2026-03-30"),
+        status: "En cours",
+        type: "Personnel",
+        stack: [{ icon: "devicon-angular-plain", nom: "Angular" }, { icon: "fa-brands fa-typescript", nom: "Typescript" }, { nom: "TailwindCSS", icon: "devicon-tailwindcss-original colored" }, ],
+        roles: ["Développeur"],
+        imageUrl: "portfolio.png",
+        lienGithub: "https://github.com/EtienneDumai/Portfolio",
+        lienDemo: "https://etiennedumai.github.io/Portfolio/",
     },
 ];
 export const SkillsPerso: Skills[] = [
@@ -248,6 +278,34 @@ export const SkillsPerso: Skills[] = [
     },
 
 ]
+export const Experiences: Experience[] = [
+    {
+        idExperience: 0,
+        entreprise: "Geomatika",
+        poste: "Développeur web et mobile",
+        type: "Alternance",
+        date_debut: new Date("2025-04-08"),
+        date_fin: new Date("2026-08-31"),
+        lieu: "Cambo-les-Bains",
+        pays: "France",
+        description: "Développement et maintenance d'application web et mobile",
+        technologies: [{ nom: "Cordova" }, { nom: "PHP", icon: "devicon-php-plain colored" }, { nom: "HTML", icon: "devicon-html5-plain colored" }, { nom: "JavaScript", icon: "devicon-javascript-plain colored" }, { nom: "PostgreSQL", icon: "devicon-postgresql-plain colored" }, { nom: "SQLite", icon: "devicon-sqlite-plain colored" }, { nom: "Bootstrap", icon: "devicon-bootstrap-plain colored" }],
+        lienEntreprise: "https://www.geomatika.fr/",
+    },
+    {
+        idExperience: 1,
+        entreprise: "Inviseo",
+        poste: "Développeur web",
+        type: "Alternance",
+        date_debut: new Date("2024-09-01"),
+        date_fin: new Date("2025-04-06"),
+        lieu: "Saint-Geours-De-Maremne",
+        pays: "France",
+        description: "Développement et maintenance d'application web",
+        technologies: [{ icon: "devicon-angular-plain", nom: "Angular" }, { icon: "devicon-typescript-plain colored", nom: "Typescript" },{nom:"MongoDB", icon:"devicon-mongodb-plain colored"}, {nom:"Express",icon:"devicon-express-original"}, {nom:"Docker", icon:"devicon-docker-plain colored"}],
+    }
+];
+
 export const Formations: Formation[] = [
     {
         idFormation: 1,
@@ -263,7 +321,7 @@ export const Formations: Formation[] = [
         date_debut: new Date("2020-09-01"),
         date_fin: new Date("2023-07-01"),
         nom: "Baccalauréat spécialité Mathématique, Physique-Chimie, Numérique et Science de l'Informatique",
-        etablissement:"Lycée André Malraux",
+        etablissement: "Lycée André Malraux",
         lieu: "Biarritz",
         pays: "France",
     },

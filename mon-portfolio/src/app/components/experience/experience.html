@@ -1,0 +1,47 @@
+<section id="experiences" class="w-full px-6 py-20 bg-canvas">
+  <div class="mx-auto max-w-5xl">
+
+    <!-- Section header -->
+    <div class="mb-12">
+      <p class="text-xs font-semibold tracking-widest uppercase text-accent mb-2">Carrière</p>
+      <h2 class="text-3xl font-bold text-ink">Expériences professionnelles</h2>
+      <div class="section-divider mt-3"></div>
+      <p class="text-sm text-dim mt-3 max-w-lg">
+        Missions, stages et collaborations qui ont enrichi mon parcours.
+      </p>
+    </div>
+
+    <!-- Timeline ou empty state -->
+    @if (experiences.length > 0) {
+      <div class="max-w-2xl">
+        @for (exp of experiences; track exp.idExperience; let last = $last) {
+          <app-experience-card [experience]="exp" [isLast]="last" />
+        }
+      </div>
+    } @else {
+      <!-- Empty state -->
+      <div class="max-w-2xl rounded-2xl border border-dashed border-accent-border bg-accent-soft p-10 flex flex-col items-center text-center gap-4">
+        <div class="flex h-14 w-14 items-center justify-center rounded-2xl bg-icon-base">
+          <i class="fa-solid fa-briefcase text-accent text-2xl"></i>
+        </div>
+        <div>
+          <p class="font-semibold text-ink mb-1">Bientôt disponible</p>
+          <p class="text-sm text-dim">
+            Mes expériences professionnelles seront ajoutées prochainement.<br />
+            Disponible pour un stage à partir de <span class="font-medium text-accent">juin 2026</span>.
+          </p>
+        </div>
+        <a
+          href="https://www.linkedin.com/in/etienne-dumai/"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl border border-accent-border text-accent bg-card text-sm font-semibold hover:bg-accent hover:text-white transition-all"
+        >
+          <i class="fa-brands fa-linkedin"></i>
+          Voir mon LinkedIn
+        </a>
+      </div>
+    }
+
+  </div>
+</section>
