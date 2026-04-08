@@ -58,12 +58,14 @@ export const Projects: Project[] = [
         nom: "APE Jules Ferry",
         description: "Lors d'un projet sur la 3ème année de BUT Informatique, l'APE Jules Ferry de l'école primaire portant le même nom nous a demandé de créer une application permettant la communication et la répartition des parents d'élèves sur l'organisation des différents événements organisés par l'APE.",
         date_debut: new Date("2025-09-01"),
-        status: "En cours",
+        date_fin: new Date("2026-04/02"),
+        status: "Terminé",
         type: "Scolaire",
         stack: [{icon:"devicon-angular-plain",nom:"Angular"}, {icon:"fa-brands fa-typescript",nom:"Typescript"}, {nom:"Laravel",icon:"devicon-laravel-original colored"}, {nom:"PHP",icon:"devicon-php-plain colored"}, {nom:"PostgreSQL", icon:"devicon-postgresql-plain colored"}, {nom:"Docker", icon:"devicon-docker-plain colored"}, {nom:"Jasmine", icon:"devicon-jasmine-original"}, {nom:"PHPUnit", icon:"devicon-php-plain colored"}, {nom:"TailwindCSS", icon:"devicon-tailwindcss-original colored"}, {nom:"UML", icon:"devicon-unifiedmodelinglanguage-plain"}],
         roles: ["Analyste", "Concepteur", "Développeur", "Scrum master"],
         imageUrl: "",
-        lienGithub: "https://github.com/EtienneDumai/SAE-5.01-APE-Jules-Ferry"
+        lienGithub: "https://github.com/ApeJulesFerryAnglet/SAE-5.01-APE-Jules-Ferry",
+        lienDemo: "https://apejulesferry-anglet.fr",
     },
     {
         id: 2,

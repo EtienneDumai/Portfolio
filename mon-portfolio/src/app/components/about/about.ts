@@ -1,18 +1,17 @@
 import { Component } from '@angular/core';
-import { CardModule } from 'primeng/card';
-import { AvatarModule } from 'primeng/avatar';
-import { ButtonModule } from 'primeng/button';
-import { TagModule } from 'primeng/tag';
+
 @Component({
   selector: 'app-about',
-  standalone:true,
-  imports: [CardModule,
-    AvatarModule,
-    ButtonModule,
-    TagModule],
+  standalone: true,
+  imports: [],
   templateUrl: './about.html',
   styleUrl: './about.css',
 })
 export class About {
-
+  stats = [
+    { value: '4',    label: 'Projets réalisés' },
+    { value: '3',    label: 'Années de formation' },
+    { value: '20+',  label: 'Technologies maîtrisées' },
+    { value: '2026', label: 'Diplôme BUT Informatique' },
+  ];
 }

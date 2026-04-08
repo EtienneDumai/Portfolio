@@ -1,63 +1,62 @@
-<div class="w-full px-6 py-8">
-  <div class="mx-auto max-w-7xl">
-    <div class="mb-8">
-      <h1 class="text-3xl font-bold text-[var(--text-primary)]">Compétences</h1>
-      <p class="text-sm text-[var(--text-secondary)] mt-2">
-        Technologies, outils et environnements que j’utilise régulièrement.
+<section id="competences" class="w-full px-6 py-20 bg-canvas">
+  <div class="mx-auto max-w-5xl">
+
+    <!-- Section header -->
+    <div class="mb-12">
+      <p class="text-xs font-semibold tracking-widest uppercase text-accent mb-2">Expertise</p>
+      <h2 class="text-3xl font-bold text-ink">Compétences</h2>
+      <div class="section-divider mt-3"></div>
+      <p class="text-sm text-dim mt-3 max-w-lg">
+        Technologies, outils et environnements que j'utilise régulièrement.
       </p>
     </div>
 
+    <!-- Skills grid -->
     <div class="grid gap-6 sm:grid-cols-1 lg:grid-cols-2 xl:grid-cols-3">
       @for (group of groupedSkills | keyvalue; track group.key) {
-        <section
-          class="rounded-2xl border border-[var(--border-color)] bg-[var(--bg-surface)] p-5 shadow-sm hover:shadow-md transition"
-        >
-          <div class="mb-5 flex items-center justify-between">
-            <h2 class="text-lg font-semibold text-[var(--text-primary)]">
-              {{ group.key }}
-            </h2>
+        <div class="rounded-2xl border border-edge bg-card shadow-sm hover:shadow-md transition-shadow overflow-hidden">
 
-            <span
-              class="rounded-full border border-[var(--border-color)] bg-[var(--bg-primary)] px-3 py-1 text-xs font-medium text-[var(--accent)]"
-            >
+          <!-- Card header -->
+          <div class="flex items-center justify-between px-5 py-4 border-b border-edge bg-surface">
+            <h3 class="text-sm font-bold text-ink">{{ group.key }}</h3>
+            <span class="px-2.5 py-1 rounded-full text-xs font-semibold bg-accent-soft text-accent border border-accent-border">
               {{ group.value.length }} skill{{ group.value.length > 1 ? 's' : '' }}
             </span>
           </div>
 
-          <div class="space-y-3">
+          <!-- Skills list -->
+          <div class="p-4 space-y-2">
             @for (skill of group.value; track skill.nom) {
-              <div
-                class="flex items-center justify-between gap-4 rounded-xl border border-[var(--border-color)] bg-[var(--bg-primary)] px-4 py-3 hover:bg-[var(--bg-surface)] transition"
-              >
-                <div class="flex items-center gap-3 min-w-0">
-                  <div
-                    class="flex h-10 w-10 items-center justify-center rounded-lg bg-[var(--border-color)] text-[var(--accent)] text-lg"
-                  >
-                    <i [class]="skill.icon"></i>
-                  </div>
+              <div class="flex items-center justify-between gap-4 rounded-xl px-4 py-3 hover:bg-surface transition-colors">
 
-                  <div>
-                    <p class="text-sm font-medium text-[var(--text-primary)]">
-                      {{ skill.nom }}
-                    </p>
-                    <p class="text-xs text-[var(--text-secondary)]">Niveau {{ skill.niveau }}/5</p>
+                <!-- Icon + name -->
+                <div class="flex items-center gap-3 min-w-0">
+                  <div class="flex h-9 w-9 shrink-0 items-center justify-center rounded-lg bg-icon-base text-lg">
+                    <i [class]="skill.icon" class="text-xl"></i>
+                  </div>
+                  <div class="min-w-0">
+                    <p class="text-sm font-semibold text-ink truncate">{{ skill.nom }}</p>
+                    <p class="text-xs text-faint">Niveau {{ skill.niveau }}/5</p>
                   </div>
                 </div>
 
-                <div class="flex gap-1">
-                  @for (dot of [1, 2, 3, 4,5]; track dot) {
+                <!-- Proficiency dots -->
+                <div class="flex gap-1 shrink-0">
+                  @for (dot of [1, 2, 3, 4, 5]; track dot) {
                     <span
-                      class="h-2.5 w-2.5 rounded-full"
-                      [class.bg-[var(--accent)]]="dot <= skill.niveau"
-                      [class.bg-[var(--text-secondary)]]="dot > skill.niveau"
+                      class="h-2.5 w-2.5 rounded-full transition-colors"
+                      [class]="dot <= skill.niveau ? 'bg-dot-on' : 'bg-dot-off'"
                     ></span>
                   }
                 </div>
+
               </div>
             }
           </div>
-        </section>
+
+        </div>
       }
     </div>
+
   </div>
-</div>
+</section>
