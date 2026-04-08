@@ -1,1 +1,22 @@
-<p>education works!</p>
+<section id="formation" class="w-full px-6 py-20 bg-surface">
+  <div class="mx-auto max-w-5xl">
+
+    <!-- Section header -->
+    <div class="mb-12">
+      <p class="text-xs font-semibold tracking-widest uppercase text-accent mb-2">Parcours</p>
+      <h2 class="text-3xl font-bold text-ink">Formation</h2>
+      <div class="section-divider mt-3"></div>
+      <p class="text-sm text-dim mt-3 max-w-lg">
+        Mon cursus académique et mes diplômes obtenus.
+      </p>
+    </div>
+
+    <!-- Timeline -->
+    <div class="max-w-2xl">
+      @for (formation of formations; track formation.idFormation; let last = $last) {
+        <app-education-card [formation]="formation" [isLast]="last" />
+      }
+    </div>
+
+  </div>
+</section>

@@ -1,0 +1,60 @@
+<div class="relative flex gap-6">
+
+  <!-- ── Timeline column ──────────────────────────────────── -->
+  <div class="flex flex-col items-center">
+    <!-- Dot -->
+    <div class="flex h-10 w-10 shrink-0 items-center justify-center rounded-full border-2 border-accent bg-card shadow-sm z-10">
+      <i class="fa-solid fa-graduation-cap text-accent text-sm"></i>
+    </div>
+    <!-- Line -->
+    @if (!isLast) {
+      <div class="flex-1 w-0.5 bg-accent-muted mt-1 min-h-8"></div>
+    }
+  </div>
+
+  <!-- ── Card ──────────────────────────────────────────────── -->
+  <div class="flex-1 pb-8">
+    <div class="rounded-2xl border border-edge bg-card shadow-sm hover:shadow-md hover:border-accent-border transition-all p-5">
+
+      <!-- Top row: title + status -->
+      <div class="flex items-start justify-between gap-4 flex-wrap mb-2">
+        <h3 class="font-bold text-ink text-base leading-snug flex-1">
+          {{ formation.nom }}
+        </h3>
+        <span
+          class="shrink-0 inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full text-xs font-semibold"
+          [class]="isOngoing
+            ? 'bg-ok-bg text-ok border border-ok-edge'
+            : 'bg-accent-soft text-accent border border-accent-border'"
+        >
+          @if (isOngoing) {
+            <span class="h-1.5 w-1.5 rounded-full bg-ok animate-pulse"></span>
+            En cours
+          } @else {
+            <i class="fa-solid fa-check text-xs"></i>
+            Obtenu
+          }
+        </span>
+      </div>
+
+      <!-- Établissement -->
+      <p class="text-sm font-medium text-dim mb-3">
+        {{ formation.etablissement }}
+      </p>
+
+      <!-- Meta infos -->
+      <div class="flex flex-wrap gap-3">
+        <span class="inline-flex items-center gap-1.5 text-xs text-faint">
+          <i class="fa-solid fa-location-dot text-accent"></i>
+          {{ formation.lieu }}, {{ formation.pays }}
+        </span>
+        <span class="inline-flex items-center gap-1.5 text-xs text-faint">
+          <i class="fa-regular fa-calendar text-accent"></i>
+          {{ formation.date_debut | date:'MMM yyyy' }} — {{ formation.date_fin | date:'MMM yyyy' }}
+        </span>
+      </div>
+
+    </div>
+  </div>
+
+</div>

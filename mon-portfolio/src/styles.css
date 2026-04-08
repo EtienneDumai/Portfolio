@@ -2,42 +2,121 @@
 
 @source "../src";
 
+/* ─── Palette & tokens ─────────────────────────────────────── */
 :root {
-    --bg-primary: #fbfbfb;
-    --bg-surface: #dbdbdb;
+  /* Backgrounds */
+  --bg-primary:   #fafafa;
+  --bg-surface:   #f5f3ff;   /* light violet tint for sections */
+  --bg-card:      #ffffff;
 
-    --text-primary: #000000;
-    --text-secondary: #979797;
+  /* Text */
+  --text-primary:   #111827;
+  --text-secondary: #6b7280;
+  --text-muted:     #9ca3af;
 
-    --accent: #5b21b6;
-    --hover-accent: #4c1d95;
+  /* Accent — violet */
+  --accent:        #5b21b6;
+  --accent-hover:  #4c1d95;
+  --accent-light:  #7c3aed;
+  --accent-soft:   #f5f3ff;
+  --accent-border: #c4b5fd;
+  --accent-muted:  #ddd6fe;
 
-    --border-color: #c9bdfe;
+  /* Borders */
+  --border-color:  #e5e7eb;
+  --border-accent: #c4b5fd;
 
-    /* Variables complémentaires utiles */
-    --surface-soft: #f3f0ff;
-    --surface-muted: #efefef;
-    --surface-contrast: #ffffff;
+  /* Icons */
+  --icon-bg: #ede9fe;
 
-    --icon-bg: #ece8ff;
+  /* Status — success */
+  --success:        #16a34a;
+  --success-bg:     #f0fdf4;
+  --success-border: #86efac;
 
-    --badge-bg: #f5f3ff;
-    --badge-border: #c4b5fd;
+  /* Status — warning */
+  --warning:        #d97706;
+  --warning-bg:     #fffbeb;
+  --warning-border: #fcd34d;
 
-    --skill-dot-active: #5b21b6;
-    --skill-dot-inactive: #cfcfcf;
+  /* Skill dots */
+  --skill-dot-active:   #5b21b6;
+  --skill-dot-inactive: #e5e7eb;
 
-    --button-secondary-bg: #ffffff;
-    --button-secondary-hover: #f3f0ff;
+  /* Layout */
+  --navbar-height: 64px;
+}
 
-    --success: #16a34a;
-    --success-hover: #15803d;
+/* ─── Tailwind v4 theme — expose CSS vars as utilities ──────── */
+@theme inline {
+  /* Accent / Violet */
+  --color-accent:        var(--accent);
+  --color-accent-hover:  var(--accent-hover);
+  --color-accent-light:  var(--accent-light);
+  --color-accent-soft:   var(--accent-soft);
+  --color-accent-border: var(--accent-border);
+  --color-accent-muted:  var(--accent-muted);
 
-    --image-placeholder-bg: #e5e5e5;
-    --image-placeholder-icon: #8a8a8a;
+  /* Backgrounds */
+  --color-canvas:  var(--bg-primary);
+  --color-surface: var(--bg-surface);
+  --color-card:    var(--bg-card);
+
+  /* Text */
+  --color-ink:   var(--text-primary);
+  --color-dim:   var(--text-secondary);
+  --color-faint: var(--text-muted);
+
+  /* Borders */
+  --color-edge:       var(--border-color);
+  --color-edge-accent: var(--border-accent);
+
+  /* Icon background */
+  --color-icon-base: var(--icon-bg);
+
+  /* Success */
+  --color-ok:       var(--success);
+  --color-ok-bg:    var(--success-bg);
+  --color-ok-edge:  var(--success-border);
+
+  /* Warning */
+  --color-warn:      var(--warning);
+  --color-warn-bg:   var(--warning-bg);
+  --color-warn-edge: var(--warning-border);
+
+  /* Skill dots */
+  --color-dot-on:  var(--skill-dot-active);
+  --color-dot-off: var(--skill-dot-inactive);
+}
+
+/* ─── Global base styles ────────────────────────────────────── */
+html {
+  scroll-behavior: smooth;
 }
 
 body {
-    background-color: var(--bg-primary);
-    color: var(--text-primary);
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto,
+    'Helvetica Neue', Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* ─── Scrollbar ─────────────────────────────────────────────── */
+::-webkit-scrollbar { width: 6px; }
+::-webkit-scrollbar-track { background: var(--bg-primary); }
+::-webkit-scrollbar-thumb {
+  background: var(--accent-muted);
+  border-radius: 3px;
+}
+::-webkit-scrollbar-thumb:hover { background: var(--accent-border); }
+
+/* ─── Section separator utility ────────────────────────────── */
+.section-divider {
+  width: 48px;
+  height: 3px;
+  background: var(--accent);
+  border-radius: 9999px;
+  margin-top: 8px;
 }
