@@ -96,8 +96,8 @@ export const Projects: Project[] = [
     },
     {
         id: 3,
-        nom: "Représentation d'algorithme de plus court chemin",
-        description: "Algorithme de plus courts chem",
+        nom: "Représentation d'algorithme de plus court chemins",
+        description: "Algorithme de plus courts chemins",
         date_debut: new Date("2024-04-08"),
         date_fin: new Date("2024-05-29"),
         status: "Terminé",
@@ -108,7 +108,7 @@ export const Projects: Project[] = [
         imageUrl:"representationAlgo.png"
     },
     {
-        id: 3,
+        id: 4,
         nom: "Nuit De l'Info 2025",
         description: "La Nuit De l'Info est un événement national visant à developper une application web en une nuit sur un thème donné. Cette année le thème était Numérique Inclusif Responsable et Durable.",
         date_debut: new Date("2025-12-04"),
@@ -122,9 +122,9 @@ export const Projects: Project[] = [
         lienDemo: "https://impslicks.alwaysdata.net"
     },
     {
-        id: 4,
+        id: 5,
         nom: "Portfolio Web",
-        description: "Portfolio Web avec des données statiques, bientôt totalement dynamiques",
+        description: "Portfolio Web avec des données statiques, bientôt totalement dynamiques.",
         date_debut: new Date("2026-03-30"),
         status: "En cours",
         type: "Personnel",
@@ -133,6 +133,17 @@ export const Projects: Project[] = [
         imageUrl: "portfolio.png",
         lienGithub: "https://github.com/EtienneDumai/Portfolio",
         lienDemo: "https://etiennedumai.github.io/Portfolio/",
+    },
+    {
+        id: 6,
+        nom: "Avionics",
+        description: "Programme de simulation d'avionique d'un avion pour reprendre du niveau sur des concepts bas niveau.",
+        date_debut: new Date("2026-03-19"),
+        status: "En cours",
+        type: "Personnel",
+        stack: [{ icon: "devicon-cplusplus-plain colored", nom: "C++" }],
+        roles: ["Développeur"],
+        lienGithub: "https://github.com/EtienneDumai/avionics",
     },
 ];
 export const SkillsPerso: Skills[] = [
