@@ -9,7 +9,7 @@ import { Component } from '@angular/core';
 })
 export class About {
   stats = [
-    { value: '4',    label: 'Projets réalisés' },
+    { value: '5',    label: 'Projets réalisés' },
     { value: '3',    label: 'Années de formation' },
     { value: '20+',  label: 'Technologies maîtrisées' },
     { value: '2026', label: 'Diplôme BUT Informatique' },
